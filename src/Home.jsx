@@ -16,10 +16,10 @@ import videoplayback from './assets/videoplayback.mp4'
 import song from './assets/song.mp4'
 import video from './assets/video.jpg'
 import checkmark from './assets/checkmark.svg'
-import marcus from './assets/marcus.svg'
+
 import ryan from './assets/ryan.svg'
 import behance from './assets/behance.svg'
-import play from './assets/play.svg'
+
 import search from './assets/search.svg'
 import git from './assets/git.svg'
 import file from './assets/File.svg'
@@ -30,7 +30,7 @@ import wispy from './assets/wispy.svg'
 import greater from './assets/greater.svg'
 import down from './assets/down.svg'
 import rights from './assets/rights.svg'
-import Navbar from './components/Navbar.jsx'
+
 import Squares from './Squares';
 
 
