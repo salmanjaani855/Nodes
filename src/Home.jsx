@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import left from './assets/left.png'
+import leftImage from './assets/left.png'
 import right from './assets/right.png'
 import amazon from './assets/amazon.svg'
 import apple from './assets/apple.svg'
@@ -158,7 +158,7 @@ const Home = () => {
             <img
               className="absolute left-0 w-[10rem] md:w-[16.5rem] h-auto object-contain"
               alt=""
-              src={left}
+              src={leftImage}
             />
 
             {/* Video */}
