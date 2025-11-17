@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-import leftImage from './assets/left.png'
+import leftImage from './assets/Left.png'
 import right from './assets/right.png'
 import amazon from './assets/amazon.svg'
 import apple from './assets/apple.svg'
