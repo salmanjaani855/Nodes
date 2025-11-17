@@ -77,7 +77,7 @@ const Home = () => {
 
 
   const handleSubscribe = async (planType) => {
-    const res = await fetch("http://localhost:5000/create-checkout-session", {
+    const res = await fetch("https://nodes-w5f6.vercel.app//create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ planType }),
