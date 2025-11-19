@@ -25,6 +25,42 @@ html {
 }
 
 
+.data{
+    font-size: 35px;
+}
+
+
+
+
+.btn {
+  font-size: 1.2rem;
+  padding: 1rem 2.5rem;
+  border: none;
+  outline: none;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: rgb(14, 26, 14); /* dark green base */
+  color: rgb(234, 234, 234);
+  font-weight: 700;
+  transition: 0.6s;
+  box-shadow: 0px 0px 60px #22c55e; /* soft green glow */
+}
+
+.btn:active {
+  transform: scale(0.92);
+}
+
+.btn:hover {
+  background: linear-gradient(
+    270deg,
+    rgba(34, 197, 94, 0.7) 0%,  /* green start */
+    rgba(110, 231, 183, 0.85) 60% /* green end */
+  );
+  color: rgb(4, 4, 38);
+}
+
+
 
 
 

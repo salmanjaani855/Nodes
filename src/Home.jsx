@@ -16,10 +16,8 @@ import videoplayback from './assets/videoplayback.mp4'
 import song from './assets/song.mp4'
 import video from './assets/video.jpg'
 import checkmark from './assets/checkmark.svg'
-
 import ryan from './assets/ryan.svg'
 import behance from './assets/behance.svg'
-
 import search from './assets/search.svg'
 import git from './assets/git.svg'
 import file from './assets/File.svg'
@@ -30,10 +28,9 @@ import wispy from './assets/wispy.svg'
 import greater from './assets/greater.svg'
 import down from './assets/down.svg'
 import rights from './assets/rights.svg'
-
 import Squares from './Squares';
-
-
+import Earth from './assets/Earth.png'
+import logo from './assets/logo.svg'
 
 
 const Home = () => {
@@ -77,7 +74,7 @@ const Home = () => {
 
 
   const handleSubscribe = async (planType) => {
-    const res = await fetch("https://nodes-w5f6.vercel.app/create-checkout-session", {
+    const res = await fetch("http://localhost:5000/create-checkout-session", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ planType }),
@@ -163,8 +160,8 @@ const Home = () => {
 
             {/* Video */}
             <video
-              className="rounded-xl w-[90%] md:w-[42.375rem] h-[23.688rem] object-cover mx-auto"
-              src={song}
+              className="rounded-xl w-[90%] md:w-[42.375rem] h-[21.688rem] object-cover mx-auto"
+              src={videoplayback}
               autoPlay
               loop
               muted
@@ -211,7 +208,7 @@ const Home = () => {
             ></span>
 
             {/* Blur Glow */}
-            <b
+            {/* <b
               className="absolute inset-0 tracking-num--0_03 leading-[3rem] sm:leading-[3.5rem] md:leading-[3.75rem]
       text-transparent !bg-clip-text
       [background:linear-gradient(92.14deg,rgba(74,222,128,0.75),rgba(110,231,183,0.75))]
@@ -220,7 +217,7 @@ const Home = () => {
       [filter:blur(10px)]"
             >
               Automation
-            </b>
+            </b> */}
           </div>
 
           {/* Description */}
@@ -234,22 +231,12 @@ const Home = () => {
             sitting next to each other.
           </div>
 
-          {/* Button */}
-          <a href="#pricing">
-            <div className="absolute top-[25.813rem] md:top-[25.813rem] left-1/2 -translate-x-1/2 w-[12rem] sm:w-[14rem] md:w-[16.688rem] h-[3.25rem] text-[1.1rem] sm:text-[1.2rem] md:text-[1.25rem] text-white cursor-pointer active:translate-y-[5px] transition-all duration-200">
-
-              {/* Back Gradient */}
-              <div className="absolute inset-0 rounded-num-4 bg-[linear-gradient(92.14deg,#4ade80,#6ee7b7)]" />
-
-              {/* Glow */}
-              <div className="absolute inset-0 blur-[10px] rounded-num-4 bg-[linear-gradient(92.14deg,#4ade80,#6ee7b7)] transition-all duration-300 shadow-[0_10px_0_0_#22c55e]"></div>
-
-              {/* Text */}
-              <b className="absolute top-[1rem] left-1/2 -translate-x-1/2 tracking-num--0_03 leading-[1.25rem] select-none">
-                Get Pro access
-              </b>
-            </div>
-          </a>
+{/* Button */}
+<a href="#pricing">
+  <button className="btn">
+    Get Pro Access
+  </button>
+</a>
 
           {/* Spacer (same as original) */}
           <div className="h-[60rem] sm:h-[58rem] md:h-[55rem]"></div>
@@ -269,10 +256,10 @@ const Home = () => {
             <b>Our Trusted</b>
             <span className="font-semibold">&nbsp;Partners</span>
           </div>
-          <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[2rem] md:text-[3rem] tracking-tight leading-[3rem] text-gray-1300 [filter:blur(10px)] whitespace-nowrap">
+          {/* <div className="absolute top-0 left-1/2 -translate-x-1/2 text-[2rem] md:text-[3rem] tracking-tight leading-[3rem] text-gray-1300 [filter:blur(10px)] whitespace-nowrap">
             <b>Our Trusted</b>
             <span className="font-semibold">&nbsp;Partners</span>
-          </div>
+          </div> */}
 
           {/* Partner Logos */}
           <div className="mt-12 flex flex-col items-center gap-8 md:gap-10 px-4 max-w-[80rem] mx-auto">
@@ -320,13 +307,14 @@ const Home = () => {
               <div className="flex flex-col space-y-4 md:space-y-6">
                 {/* Heading with Blur Effect */}
                 <div className="relative">
-                  <h2 className="relative z-10 text-gray-100 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] tracking-tight leading-tight font-semibold">
-                    Meet the Author
-                  </h2>
-                  {/* Blur Effect Behind */}
-                  <h2 className="absolute top-0 left-0 text-neutral-50/75 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-[3rem] tracking-tight leading-tight font-semibold blur-[10px] pointer-events-none">
-                    Meet the Author
-                  </h2>
+<h2 className="relative z-10 text-gray-100 
+  text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-[3rem] 
+  tracking-tight leading-tight font-semibold data">
+  Meet the Author
+</h2>
+
+
+
                 </div>
 
                 {/* Paragraphs */}
@@ -340,33 +328,46 @@ const Home = () => {
 
 
                 {/* Gradient Box & Read More */}
-                <a
-                  href='https://youtu.be/2x2eIhn2BJM?si=WvoH87EVnoeww-qQ'
-                  target='_blank'
-                  className="pt-4 md:pt-6"
-                >
-                  <div className="relative w-full max-w-[18.688rem]">
 
-                    {/* Animated Border */}
-                    <div className="relative w-full h-[3rem] rounded-lg p-[2px] animated-green-border">
+  <div className="relative group w-[14rem]"> {/* Width fixed */}
+    <a
+  href="https://youtu.be/2x2eIhn2BJM?si=WvoH87EVnoeww-qQ"
+  target="_blank"
+  className="pt-4 md:pt-6 flex justify-start"
+>
+    <button
+      className="relative inline-block w-full h-[2.8rem] font-semibold leading-6 text-white bg-gray-800 shadow-2xl cursor-pointer rounded-xl shadow-zinc-900 transition-transform duration-300 ease-in-out hover:scale-105 active:scale-95"
+    >
+      {/* Glow Background */}
+      <span
+        className="absolute inset-0 rounded-xl bg-gradient-to-r from-teal-400 via-blue-500 to-purple-500 p-[2px] opacity-0 transition-opacity duration-500 group-hover:opacity-100"
+      ></span>
 
-                      {/* Inner Box */}
-                      <div className="w-full h-full rounded-lg bg-gradient-to-r from-green-400/20 to-emerald-300/20 flex items-center justify-center">
+      {/* Button Inner */}
+      <span className="relative z-10 block px-6 py-2.5 rounded-xl bg-gray-950">
+        <div className="relative z-10 flex items-center justify-center space-x-2">
+          <span className="transition-all duration-500 group-hover:translate-x-1">
+            Read more about the author
+          </span>
+          <svg
+            className="w-5 h-5 transition-transform duration-500 group-hover:translate-x-1"
+            fill="currentColor"
+            viewBox="0 0 20 20"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              clipRule="evenodd"
+              d="M8.22 5.22a.75.75 0 0 1 1.06 0l4.25 4.25a.75.75 0 0 1 0 1.06l-4.25 4.25a.75.75 0 0 1-1.06-1.06L11.94 10 8.22 6.28a.75.75 0 0 1 0-1.06Z"
+              fillRule="evenodd"
+            ></path>
+          </svg>
+        </div>
+      </span>
+    </button>
+</a>
+  </div>
 
-                        <div className="relative">
-                          <div className="text-green-400 text-sm sm:text-base font-medium whitespace-nowrap">
-                            Read more about the author
-                          </div>
-                          <div className="absolute top-0 left-0 text-green-400 text-sm sm:text-base font-medium blur-sm pointer-events-none whitespace-nowrap">
-                            Read more about the author
-                          </div>
-                        </div>
 
-                      </div>
-                    </div>
-
-                  </div>
-                </a>
 
               </div>
 
@@ -381,7 +382,7 @@ const Home = () => {
 
                   {/* Video */}
                   <video
-                    src={videoplayback}
+                    src={song}
                     autoPlay
                     loop
                     muted
@@ -424,10 +425,10 @@ const Home = () => {
                 <span className="font-semibold"> Plan</span>
               </h2>
               {/* Blur Effect */}
-              <h2 className="absolute top-0 left-1/2 -translate-x-1/2 text-gray-1300 text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] tracking-tight leading-tight blur-[10px] pointer-events-none">
+              {/* <h2 className="absolute top-0 left-1/2 -translate-x-1/2 text-gray-1300 text-3xl sm:text-4xl md:text-5xl lg:text-[3rem] tracking-tight leading-tight blur-[10px] pointer-events-none">
                 <b>Choose Your</b>
                 <span className="font-semibold"> Plan</span>
-              </h2>
+              </h2> */}
             </div>
 
             {/* Pricing Cards Container */}
@@ -484,65 +485,55 @@ const Home = () => {
 
               </div>
 
-              {/* Platinum Plan Card (Featured - Higher Position with Shadow, No Border) */}
-              <div className="relative w-full max-w-[25.313rem] h-auto lg:h-[27.875rem] mx-auto lg:mx-0 lg:-mt-8">
-                {/* Green Shadow Behind - Multiple Layers */}
-                <div className="absolute -inset-2 rounded-lg bg-gradient-to-r from-green-400/40 to-emerald-300/40 blur-3xl -z-10" />
-                <div className="absolute -inset-1 rounded-lg bg-gradient-to-r from-green-400/30 to-emerald-300/30 blur-2xl -z-10" />
+{/* Platinum Plan Card (Transparent, Subtle Side White Glow, Offset Glow) */}
+<div className="relative w-full max-w-[25.313rem] h-auto lg:h-[27.875rem] mx-auto lg:mx-0 lg:-mt-8">
 
-                <div className="relative rounded-lg bg-gray-1200 p-6 lg:p-8 flex flex-col h-full">
-                  <div className="flex justify-between items-start mb-6">
-                    <div>
-                      <h3 className="text-whitesmoke text-xl lg:text-2xl font-bold mb-2">Platinum</h3>
-                      <p className="text-gray-100 text-sm font-light">Go all in</p>
-                    </div>
+  {/* Offset Glow - Subtle, Centered Slightly Up */}
+  <div className="absolute top-[-20px] left-1/2 -translate-x-1/2 w-40 h-40 bg-green-400/20 rounded-full blur-2xl -z-10" />
+  <div className="absolute bottom-[-20px] right-10 w-32 h-32 bg-emerald-300/20 rounded-full blur-xl -z-10" />
 
-                    {/* Price positioned on the right */}
-                    <div className="text-gray-100 text-right">
-                      <span className="text-3xl lg:text-[2.5rem] font-medium">$99/</span>
-                      <span className="text-xl lg:text-[1.5rem] font-light">month</span>
-                    </div>
-                  </div>
+  {/* Transparent Card with Subtle White Side Glow */}
+  <div className="relative rounded-lg bg-gray-1200/20 backdrop-blur-md p-6 lg:p-8 flex flex-col h-full 
+                  border border-green-400/10
+                  shadow-[inset_0_0_15px_rgba(255,255,255,0.15),0_0_20px_rgba(255,255,255,0.1)]">
 
-                  {/* Features List */}
-                  <div className="flex-1 space-y-4 mb-6 text-sm">
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit tortor tempor sit.</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit tortor.</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit.</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit.</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit tortor tempor sit.</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
-                      <span className="text-gray-100 leading-relaxed">Donec sed elit tortor tempor sit.</span>
-                    </div>
-                  </div>
+    <div className="flex justify-between items-start mb-6">
+      <div>
+        <h3 className="text-whitesmoke text-xl lg:text-2xl font-bold mb-2">Platinum</h3>
+        <p className="text-gray-100 text-sm font-light">Go all in</p>
+      </div>
 
-                  {/* Choose Button (Featured Style) */}
-                  <button
-                    onClick={() => handleSubscribe("platinum")}
-                    className="relative w-full lg:w-[20.313rem] h-[3rem] rounded-num-4 overflow-hidden mx-auto cursor-pointer"
-                  >
-                    <div className="absolute inset-0 rounded-num-4 bg-gradient-to-r from-green-400 to-emerald-300 blur-[10px]" />
-                    <div className="absolute inset-0 rounded-num-4 bg-gradient-to-r from-green-400 to-emerald-300 border border-mediumspringgreen-100" />
-                    <span className="relative z-10 text-white font-bold text-lg">Choose</span>
-                  </button>
-                </div>
-              </div>
+      {/* Price positioned on the right */}
+      <div className="text-gray-100 text-right">
+        <span className="text-3xl lg:text-[2.5rem] font-medium">$99/</span>
+        <span className="text-xl lg:text-[1.5rem] font-light">month</span>
+      </div>
+    </div>
+
+    {/* Features List */}
+    <div className="flex-1 space-y-4 mb-6 text-sm">
+      {[...Array(6)].map((_, i) => (
+        <div key={i} className="flex items-start gap-3">
+          <img className="w-4 h-4 mt-0.5 flex-shrink-0" alt="" src={checkmark} />
+          <span className="text-gray-100 leading-relaxed">Donec sed elit tortor tempor sit.</span>
+        </div>
+      ))}
+    </div>
+
+    {/* Choose Button */}
+    <button
+      onClick={() => handleSubscribe("platinum")}
+      className="relative w-full lg:w-[20.313rem] h-[3rem] rounded-num-4 overflow-hidden mx-auto cursor-pointer"
+    >
+      <div className="absolute inset-0 rounded-num-4 bg-gradient-to-r from-green-400/70 to-emerald-300/70 blur-[8px]" />
+      <div className="absolute inset-0 rounded-num-4 bg-gradient-to-r from-green-400 to-emerald-300 border border-mediumspringgreen-100" />
+      <span className="relative z-10 text-white font-bold text-lg">Choose</span>
+    </button>
+
+  </div>
+</div>
+
+
 
               {/* Pro Business Card */}
               <div className="relative rounded-lg bg-gray-1200 border border-darkslategray-100 w-full max-w-[25.313rem] h-auto lg:h-[23.375rem] p-6 lg:p-8 flex flex-col mx-auto lg:mx-0 lg:mt-12">
@@ -635,7 +626,7 @@ const Home = () => {
                     >
                       <div className="relative pt-[1.5rem]">
                         {isCenter && (
-                          <div className="absolute top-[1.5rem] left-0 blur-[50px] rounded bg-gray-300 w-full h-[22.75rem]"></div>
+                          <div className="absolute top-[1.5rem] left-0 blur-[50px] rounded bg-gray-300 w-full h-[22.75rem] "></div>
                         )}
                         <div className={`relative rounded bg-gray-200 border-darkslategray border-solid border ${isCenter ? 'p-6' : 'p-5'}`}>
                           <img
@@ -645,10 +636,10 @@ const Home = () => {
                               }`}
                           />
 
-                          <div className={`${isCenter ? 'mt-6' : 'mt-4'} leading-[150%] ${isCenter ? 'text-base' : 'text-[0.873rem]'}`}>
+                          <div className={`${isCenter ? 'mt-6' : 'mt-4'} leading-[150%] text-gray-100 ${isCenter ? 'text-base' : 'text-[0.873rem]'}`}>
                             {testimonial.text}
                           </div>
-                          <div className={`mt-${isCenter ? '10' : '8'} flex items-center gap-${isCenter ? '4' : '3'}`}>
+                          <div className={`mt-${isCenter ? '10' : '8'}  flex items-center gap-${isCenter ? '4' : '3'}`}>
                             <img
                               src={ryan} // yahan image ka source daal do
                               alt="center icon"
@@ -710,34 +701,37 @@ const Home = () => {
               </div>
             </div>
 
-            {/* Right Side Content */}
-            <div id='about' className="w-full lg:w-[48%] mb-12 lg:mb-0 flex flex-col items-center lg:items-start">
-              {/* Heading Section */}
-              <div className="relative w-full mb-6 lg:mb-8 max-w-[40rem] text-center lg:text-left">
-                <div className="relative text-[2rem] sm:text-[2.5rem] md:text-[3rem] leading-[3.2rem] text-gray-100 font-bold">
-                  <div className="absolute top-0 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0 blur-[10px] text-gray-100/40">
-                    <b>Loved By Industry</b>
-                    <span className="font-semibold"> Leaders</span>
-                  </div>
-                  <div className="relative">
-                    <b>Loved By Industry</b>
-                    <span className="font-semibold"> Leaders</span>
-                  </div>
-                </div>
+{/* Right Side Content */}
+<div id='about' className="w-full lg:w-[48%] mb-12 lg:mb-0 flex flex-col items-center lg:items-start">
 
-                {/* First Description */}
-                <div className="mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl leading-[150%] text-darkgray-100 max-w-full lg:max-w-[39rem] mx-auto lg:mx-0">
-                  Node CLI scripts run fast in terminal environments, allowing developers to automate repeated tasks, manage files, configure projects, and test code efficiently across multiple environments.
-                </div>
+  {/* Heading Section */}
+  <div className="relative w-full mb-6 lg:mb-8 max-w-[40rem] text-center lg:text-left">
 
-              </div>
+    <div className="relative text-[1.7rem] sm:text-[2rem] md:text-[2.4rem] leading-[3rem] text-gray-100 font-bold">
+      {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 lg:left-0 lg:translate-x-0 blur-[10px] text-gray-100/40">
+        <b>Loved By Industry</b>
+        <span className="font-semibold"> Leaders</span>
+      </div> */}
+      <div className="relative">
+        <b>Loved By Industry</b>
+        <span className="font-semibold"> Leaders</span>
+      </div>
+    </div>
 
-              {/* Second Description */}
-              <div className="mt-6 lg:mt-8 leading-[150%] text-darkgray-100 max-w-full lg:max-w-[39rem] mx-auto lg:mx-0 text-center lg:text-left">
-                Node CLI workflow allows developers to run scripts for automation, file handling, testing, and project configuration. It simplifies repeated tasks while maintaining efficiency, speed, and control across different terminal environments.
-              </div>
+    {/* First Description */}
+    <div className="mt-4 lg:mt-6 text-base sm:text-lg lg:text-xl leading-[150%] text-darkgray-100 max-w-full lg:max-w-[39rem] mx-auto lg:mx-0">
+      Node CLI scripts run fast in terminal environments, allowing developers to automate repeated tasks, manage files, configure projects, and test code efficiently across multiple environments.
+    </div>
 
-            </div>
+  </div>
+
+  {/* Second Description */}
+  <div className="mt-6 lg:mt-8 leading-[150%] text-darkgray-100 max-w-full lg:max-w-[39rem] mx-auto lg:mx-0 text-center lg:text-left">
+    Node CLI workflow allows developers to run scripts for automation, file handling, testing, and project configuration. It simplifies repeated tasks while maintaining efficiency, speed, and control across different terminal environments.
+  </div>
+
+</div>
+
           </div>
         </div>
 
@@ -757,12 +751,12 @@ const Home = () => {
 
             {/* Heading - Always Centered */}
             <div className="relative mb-12 lg:mb-16 text-center">
-              <h2 className="relative z-10 text-[3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[3rem] font-bold leading-[1.1] text-gray-100">
+              <h2 className="relative z-10 text-[3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[3rem] xl:text-[3rem] font-bold leading-[1.1] text-gray-100">
                 What’s Inside
               </h2>
-              <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[3rem] font-bold leading-[1.1] text-gray-100/70 blur-[10px]">
+              {/* <div className="absolute top-0 left-1/2 transform -translate-x-1/2 text-[3rem] sm:text-[3.5rem] md:text-[4rem] lg:text-[4.5rem] xl:text-[3rem] font-bold leading-[1.1] text-gray-100/70 blur-[10px]">
                 What’s Inside
-              </div>
+              </div> */}
             </div>
 
 
@@ -777,9 +771,9 @@ const Home = () => {
                     <b className="relative z-10 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
                       Design
                     </b>
-                    <b className="absolute top-0 left-0 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 blur-[7px] opacity-75">
+                    {/* <b className="absolute top-0 left-0 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 blur-[7px] opacity-75">
                       Design
-                    </b>
+                    </b> */}
                   </div>
 
                   {/* Subtitle */}
@@ -795,155 +789,124 @@ const Home = () => {
               </div>
 
               {/* Right Card - Code Editor */}
-              <div className="w-full">
-                <div className="w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:ml-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px] overflow-hidden bg-gray-200">
-                  <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
+<div className="w-full overflow-auto"> {/* Outer scroll bar rehne ke liye */}
+  <div className="w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:ml-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px] bg-gray-200">
+    <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
 
-                    {/* Sidebar */}
-                    <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
-                      {/* Header */}
-                      <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
-                        <div className="flex items-center gap-1">
-                          <div className="h-2 w-2 rounded-full bg-tomato" />
-                          <div className="h-2 w-2 rounded-full bg-gold" />
-                          <div className="h-2 w-2 rounded-full bg-forestgreen" />
-                        </div>
-                        <b className="text-xs sm:text-sm text-white">Editor</b>
-                      </div>
+      {/* Sidebar */}
+      <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
+          <div className="flex items-center gap-1">
+            <div className="h-2 w-2 rounded-full bg-tomato" />
+            <div className="h-2 w-2 rounded-full bg-gold" />
+            <div className="h-2 w-2 rounded-full bg-forestgreen" />
+          </div>
+          <b className="text-xs sm:text-sm text-white">Editor</b>
+        </div>
 
-                      {/* Icons Column - Vertical Layout like VS Code */}
-                      <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        {/* Icons */}
+        <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        </div>
 
-                      </div>
+        {/* File Tree */}
+        <div className="flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-hidden"> {/* Scroll hat gayi */}
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-bold truncate">wispy</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">.github</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">node_modules</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-medium truncate">src</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-white cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">index.js</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">README.md</span>
+          </div>
+        </div>
+      </div>
 
-                      {/* File Tree */}
-                      <div className="flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-y-auto">
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+      {/* Main Editor Area */}
+      <div className="flex-1 flex flex-col bg-gray-200">
+        {/* Tabs */}
+        <div className="flex items-center bg-gr-200 text-xs sm:text-sm overflow-x-auto">
+          <div className="flex items-center py-2 px-3 gap-2 bg-gray-300 text-white border-r border-gray-500 flex-shrink-0">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">index.js</span>
+          </div>
+          <div className="flex items-center py-2 px-3 gap-2 text-white hover:bg-gray-300 flex-shrink-0 cursor-pointer">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">README.md</span>
+          </div>
+        </div>
 
-                          <span className="font-bold truncate">wispy</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">.github</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">node_modules</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
-                          <span className="font-medium truncate">src</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+        {/* Code Content */}
+        <div className="text-lightskyblue flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-hidden text-xs sm:text-sm font-mono bg-[#171717]"> {/* Scroll hidden */}
+          {/* Line Numbers */}
+          <div className="text-gray-300 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
+            {Array.from({ length: 21 }, (_, i) => <div key={i}>{i + 1}</div>)}
+          </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">.gitignore</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-white cursor-pointer">
+          {/* Code */}
+          <div className="flex-1 text-gray-100 font-medium overflow-x-auto">
+            <div className="text-mediumseagreen">// Imports</div>
+            <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Collection name</div>
+            <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Schema</div>
+            <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
+            <div>&nbsp;&nbsp;&#125;,</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
+            <div>&nbsp;&nbsp;&#125;</div>
+            <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Model</div>
+            <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
+          </div>
+        </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">index.js</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+        {/* Footer */}
+        <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
+          <span className="font-medium flex-shrink-0">LF</span>
+          <span className="font-medium flex-shrink-0">Line 5:36</span>
+          <span className="font-medium flex-shrink-0">UTF8</span>
+          <span className="font-medium flex-shrink-0">2 spaces</span>
+          <div className="flex items-center flex-shrink-0 gap-1.5">
+            <img className="h-3 w-3" alt="" src={git} />
+            <b className="font-bold">main</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">README.md</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Main Editor Area */}
-                    <div className="flex-1 flex flex-col bg-gray-200">
-                      {/* Tabs */}
-                      <div className="flex items-center bg-gr-200 text-xs sm:text-sm overflow-x-auto">
-                        <div className="flex items-center py-2 px-3 gap-2 bg-gray-300 text-white border-r border-gray-500 flex-shrink-0">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">index.js</span>
-                        </div>
-                        <div className="flex items-center py-2 px-3 gap-2 text-white hover:bg-gray-300 flex-shrink-0 cursor-pointer">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">README.md</span>
-                        </div>
-
-                      </div>
-
-                      {/* Code Content */}
-                      <div className="text-lightskyblue flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-auto text-xs sm:text-sm font-mono bg-[#171717]">
-                        {/* Line Numbers */}
-                        <div className="text-gray-300 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
-                          <div>1</div>
-                          <div>2</div>
-                          <div>3</div>
-                          <div>4</div>
-                          <div className="text-gray-100">5</div>
-                          <div>6</div>
-                          <div>7</div>
-                          <div>8</div>
-                          <div>9</div>
-                          <div>10</div>
-                          <div>11</div>
-                          <div>12</div>
-                          <div>13</div>
-                          <div>14</div>
-                          <div>15</div>
-                          <div>16</div>
-                          <div>17</div>
-                          <div>18</div>
-                          <div>19</div>
-                          <div>20</div>
-                          <div>21</div>
-                        </div>
-
-                        {/* Code */}
-                        <div className="flex-1 text-gray-100 font-medium overflow-x-auto">
-                          <div className="text-mediumseagreen">// Imports</div>
-                          <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Collection name</div>
-                          <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Schema</div>
-                          <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
-                          <div>&nbsp;&nbsp;&#125;,</div>
-                          <div>&nbsp;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
-                          <div>&nbsp;&nbsp;&#125;</div>
-                          <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Model</div>
-                          <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
-                        </div>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
-                        <span className="font-medium flex-shrink-0">LF</span>
-                        <span className="font-medium flex-shrink-0">Line 5:36</span>
-                        <span className="font-medium flex-shrink-0">UTF8</span>
-                        <span className="font-medium flex-shrink-0">2 spaces</span>
-                        <div className="flex items-center flex-shrink-0 gap-1.5">
-                          <img className="h-3 w-3" alt="" src={git} />
-                          <b className="font-bold">main</b>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
             </div>
           </div>
@@ -972,156 +935,124 @@ const Home = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-start">
 
               {/* 1. Code Editor (Ab Left par hai) */}
-              <div className="w-full">
-                {/* Alignment change: lg:ml-auto se lg:mr-auto kiya */}
-                <div className="bg-gray-200 w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:mr-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px] overflow-hidden">
-                  <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
+<div className="w-full overflow-auto"> {/* Outer scroll bar rehne ke liye */}
+  <div className="bg-gray-200 w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:mr-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px]">
+    <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
 
-                    {/* Sidebar */}
-                    <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
-                      {/* Header */}
-                      <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
-                        <div className="flex items-center gap-1">
-                          <div className="h-2 w-2 rounded-full bg-tomato" />
-                          <div className="h-2 w-2 rounded-full bg-gold" />
-                          <div className="h-2 w-2 rounded-full bg-forestgreen" />
-                        </div>
-                        <b className="text-xs sm:text-sm text-gray-100">Editor</b>
-                      </div>
+      {/* Sidebar */}
+      <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
+          <div className="flex items-center gap-1">
+            <div className="h-2 w-2 rounded-full bg-tomato" />
+            <div className="h-2 w-2 rounded-full bg-gold" />
+            <div className="h-2 w-2 rounded-full bg-forestgreen" />
+          </div>
+          <b className="text-xs sm:text-sm text-gray-100">Editor</b>
+        </div>
 
-                      {/* Icons Column - Vertical Layout like VS Code */}
-                      <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        {/* Icons */}
+        <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        </div>
 
-                      </div>
+        {/* File Tree */}
+        <div className="flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-hidden"> {/* Scroll hata di */}
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-bold truncate">wispy</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">.github</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">node_modules</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-medium truncate">src</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-gray-100 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">index.js</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">README.md</span>
+          </div>
+        </div>
+      </div>
 
-                      {/* File Tree */}
-                      <div className="flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-y-auto">
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+      {/* Main Editor Area */}
+      <div className="flex-1 flex flex-col bg-gray-200">
+        {/* Tabs */}
+        <div className="flex items-center bg-gray-200 text-xs sm:text-sm overflow-x-auto">
+          <div className="flex items-center py-2 px-3 gap-2 bg-gray-200 text-gray-100 border-r border-gray-500 flex-shrink-0">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">index.js</span>
+          </div>
+          <div className="flex items-center py-2 px-3 gap-2 text-gray-100 hover:bg-gray-300 flex-shrink-0 cursor-pointer">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">README.md</span>
+          </div>
+        </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
-                          <span className="font-bold truncate">wispy</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">.github</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">node_modules</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
-                          <span className="font-medium truncate">src</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+        {/* Code Content */}
+        <div className="bg-[#171717] flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-hidden text-xs sm:text-sm font-mono"> {/* Scroll hata di */}
+          {/* Line Numbers */}
+          <div className="text-gray-200 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
+            {Array.from({ length: 21 }, (_, i) => <div key={i}>{i + 1}</div>)}
+          </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">.gitignore</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-gray-100 cursor-pointer">
+          {/* Code */}
+          <div className="flex-1 text-gray-100 font-medium overflow-x-auto">
+            <div className="text-mediumseagreen">// Imports</div>
+            <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Collection name</div>
+            <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Schema</div>
+            <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
+            <div>&nbsp;&nbsp;&#125;,</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
+            <div>&nbsp;&nbsp;&#125;</div>
+            <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Model</div>
+            <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
+          </div>
+        </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">index.js</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+        {/* Footer */}
+        <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
+          <span className="font-medium flex-shrink-0">LF</span>
+          <span className="font-medium flex-shrink-0">Line 5:36</span>
+          <span className="font-medium flex-shrink-0">UTF8</span>
+          <span className="font-medium flex-shrink-0">2 spaces</span>
+          <div className="flex items-center flex-shrink-0 gap-1.5">
+            <img className="h-3 w-3" alt="" src={git} />
+            <b className="font-bold">main</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">README.md</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Main Editor Area */}
-                    <div className="flex-1 flex flex-col bg-gray-200">
-                      {/* Tabs */}
-                      <div className="flex items-center bg-gray-200 text-xs sm:text-sm overflow-x-auto">
-                        <div className="flex items-center py-2 px-3 gap-2 bg-gray-200 text-gray-100 border-r border-gray-500 flex-shrink-0">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">index.js</span>
-                        </div>
-                        <div className="flex items-center py-2 px-3 gap-2 text-gray-100 hover:bg-gray-300 flex-shrink-0 cursor-pointer">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">README.md</span>
-                        </div>
-
-                      </div>
-
-                      {/* Code Content */}
-                      <div className="bg-[#171717] flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-auto text-xs sm:text-sm font-mono">
-                        {/* Line Numbers */}
-                        <div className="text-gray-200 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
-                          <div>1</div>
-                          <div>2</div>
-                          <div>3</div>
-                          <div>4</div>
-                          <div className="text-gray-100">5</div>
-                          <div>6</div>
-                          <div>7</div>
-                          <div>8</div>
-                          <div>9</div>
-                          <div>10</div>
-                          <div>11</div>
-                          <div>12</div>
-                          <div>13</div>
-                          <div>14</div>
-                          <div>15</div>
-                          <div>16</div>
-                          <div>17</div>
-                          <div>18</div>
-                          <div>19</div>
-                          <div>20</div>
-                          <div>21</div>
-                        </div>
-
-                        {/* Code */}
-                        <div className=" flex-1 text-gray-100 font-medium overflow-x-auto">
-                          <div className="text-mediumseagreen">// Imports</div>
-                          <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Collection name</div>
-                          <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Schema</div>
-                          <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
-                          <div>&nbsp;&nbsp;&#125;,</div>
-                          <div>&nbsp;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
-                          <div>&nbsp;&nbsp;&#125;</div>
-                          <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Model</div>
-                          <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
-                        </div>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
-                        <span className="font-medium flex-shrink-0">LF</span>
-                        <span className="font-medium flex-shrink-0">Line 5:36</span>
-                        <span className="font-medium flex-shrink-0">UTF8</span>
-                        <span className="font-medium flex-shrink-0">2 spaces</span>
-                        <div className="flex items-center flex-shrink-0 gap-1.5">
-                          <img className="h-3 w-3" alt="" src={git} />
-                          <b className="font-bold">main</b>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
 
               {/* 2. "Code" Content (Ab Right par hai aur Responsive hai) */}
               <div className="w-full text-left font-inter">
@@ -1133,10 +1064,10 @@ const Home = () => {
                   {/* Heading with glow effect */}
                   <div className="relative inline-block">
                     {/* Blurred glow layer */}
-                    <b className="absolute top-0 left-0 text-3xl sm:text-4xl lg:text-[2.25rem] leading-tight 
+                    {/* <b className="absolute top-0 left-0 text-3xl sm:text-4xl lg:text-[2.25rem] leading-tight 
      text-green-400 blur-[8px] opacity-70 select-none">
                       Code
-                    </b>
+                    </b> */}
 
                     {/* Sharp gradient text */}
                     <b className="relative text-3xl sm:text-4xl lg:text-[2.25rem] leading-tight 
@@ -1199,9 +1130,9 @@ const Home = () => {
                     <b className="relative z-10 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300">
                       Collaborate
                     </b>
-                    <b className="absolute top-0 left-0 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 blur-[7px] opacity-75">
+                    {/* <b className="absolute top-0 left-0 text-[2.25rem] leading-[2.25rem] text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-300 blur-[7px] opacity-75">
                       Collaborate
-                    </b>
+                    </b> */}
                   </div>
 
                   {/* Subtitle */}
@@ -1218,155 +1149,124 @@ const Home = () => {
               </div>
 
               {/* Right Card - Code Editor */}
-              <div className="bg-gray-200 w-full">
-                <div className="w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:ml-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px] overflow-hidden">
-                  <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
+<div className="bg-gray-200 w-full overflow-auto"> {/* Outer scroll bar rehne ke liye */}
+  <div className="w-full max-w-full lg:max-w-2xl xl:max-w-3xl mx-auto lg:ml-auto shadow-[0px_5px_8px_rgba(0,0,0,0.15)] rounded-[4.22px] overflow-hidden">
+    <div className="flex flex-col sm:flex-row h-auto sm:h-[22.375rem] lg:h-[25rem] xl:h-[28rem]">
 
-                    {/* Sidebar */}
-                    <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
-                      {/* Header */}
-                      <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
-                        <div className="flex items-center gap-1">
-                          <div className="h-2 w-2 rounded-full bg-tomato" />
-                          <div className="h-2 w-2 rounded-full bg-gold" />
-                          <div className="h-2 w-2 rounded-full bg-forestgreen" />
-                        </div>
-                        <b className="text-xs sm:text-sm text-gray-100">Editor</b>
-                      </div>
+      {/* Sidebar */}
+      <div className="w-full sm:w-32 md:w-36 lg:w-40 backdrop-blur-[26px] bg-darkslategray flex flex-col">
+        {/* Header */}
+        <div className="flex items-center justify-between sm:justify-start py-2 px-3 gap-2 border-b border-gray-700">
+          <div className="flex items-center gap-1">
+            <div className="h-2 w-2 rounded-full bg-tomato" />
+            <div className="h-2 w-2 rounded-full bg-gold" />
+            <div className="h-2 w-2 rounded-full bg-forestgreen" />
+          </div>
+          <b className="text-xs sm:text-sm text-gray-100">Editor</b>
+        </div>
 
-                      {/* Icons Column - Vertical Layout like VS Code */}
-                      <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
-                        <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        {/* Icons */}
+        <div className="flex flex-row items-center py-2 px-0 gap-3 border-b border-gray-700">
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={file} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={git} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={search} />
+          <img className="h-6 w-6 lg:h-7 lg:w-7 cursor-pointer hover:opacity-80" alt="" src={plugins} />
+        </div>
 
-                      </div>
+        {/* File Tree */}
+        <div className="flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-hidden"> {/* Scroll hata di */}
+          {/* File items */}
+          <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-bold truncate">wispy</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">.github</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
+            <span className="font-medium truncate">node_modules</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
+            <span className="font-medium truncate">src</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-gray-100 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">index.js</span>
+          </div>
+          <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
+            <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
+            <span className="font-medium truncate">README.md</span>
+          </div>
+        </div>
+      </div>
 
-                      {/* File Tree */}
-                      <div className=" flex-1 flex flex-col py-2 text-xs sm:text-sm overflow-y-auto">
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-white hover:bg-gray-700 cursor-pointer">
+      {/* Main Editor Area */}
+      <div className="flex-1 flex flex-col bg-gray-100">
+        {/* Tabs */}
+        <div className="flex items-center bg-gray-200 text-xs sm:text-sm overflow-x-auto">
+          <div className="flex items-center py-2 px-3 gap-2 bg-gray-600 text-gray-100 border-r border-gray-500 flex-shrink-0">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">index.js</span>
+          </div>
+          <div className="flex items-center py-2 px-3 gap-2 text-gray-100 hover:bg-gray-300 flex-shrink-0 cursor-pointer">
+            <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
+            <span className="font-medium">README.md</span>
+          </div>
+        </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
-                          <span className="font-bold truncate">wispy</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">.github</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={greater} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={files} />
-                          <span className="font-medium truncate">node_modules</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={down} />
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={wispy} />
-                          <span className="font-medium truncate">src</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
+        {/* Code Content */}
+        <div className="flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-hidden text-xs sm:text-sm font-mono bg-[#171717]"> {/* Scroll hata di */}
+          {/* Line Numbers */}
+          <div className="text-gray-200 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
+            {Array.from({ length: 21 }, (_, i) => <div key={i}>{i + 1}</div>)}
+          </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">.gitignore</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 bg-gray-600 text-gray-100 cursor-pointer">
+          {/* Code */}
+          <div className="flex-1 text-gray-100 font-medium overflow-x-auto">
+            <div className="text-mediumseagreen">// Imports</div>
+            <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Collection name</div>
+            <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Schema</div>
+            <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
+            <div>&nbsp;&nbsp;&#125;,</div>
+            <div>&nbsp;</div>
+            <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
+            <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
+            <div>&nbsp;&nbsp;&#125;</div>
+            <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
+            <div>&nbsp;</div>
+            <div className="text-mediumseagreen">// Model</div>
+            <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
+          </div>
+        </div>
 
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">index.js</span>
-                        </div>
-                        <div className="flex items-center py-1.5 px-3 gap-2 text-gray-100 hover:bg-gray-700 cursor-pointer">
-
-                          <img className="h-4 w-4 lg:h-5 lg:w-5" alt="" src={file1} />
-                          <span className="font-medium truncate">README.md</span>
-                        </div>
-                      </div>
-                    </div>
-
-                    {/* Main Editor Area */}
-                    <div className="flex-1 flex flex-col bg-gray-100">
-                      {/* Tabs */}
-                      <div className="flex items-center bg-gray-200 text-xs sm:text-sm overflow-x-auto">
-                        <div className="flex items-center py-2 px-3 gap-2 bg-gray-600 text-gray-100 border-r border-gray-500 flex-shrink-0">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">index.js</span>
-                        </div>
-                        <div className="flex items-center py-2 px-3 gap-2 text-gray-100 hover:bg-gray-300 flex-shrink-0 cursor-pointer">
-                          <img className="h-3.5 w-3.5 lg:h-4 lg:w-4" alt="" src={file1} />
-
-                          <span className="font-medium">README.md</span>
-                        </div>
-
-                      </div>
-
-                      {/* Code Content */}
-                      <div className="flex-1 flex p-3 sm:p-4 lg:p-5 gap-3 sm:gap-4 overflow-auto text-xs sm:text-sm font-mono bg-[#171717]">
-                        {/* Line Numbers */}
-                        <div className="text-gray-200 font-bold select-none flex-shrink-0 pr-3 border-r border-gray-300">
-                          <div>1</div>
-                          <div>2</div>
-                          <div>3</div>
-                          <div>4</div>
-                          <div className="text-gray-100">5</div>
-                          <div>6</div>
-                          <div>7</div>
-                          <div>8</div>
-                          <div>9</div>
-                          <div>10</div>
-                          <div>11</div>
-                          <div>12</div>
-                          <div>13</div>
-                          <div>14</div>
-                          <div>15</div>
-                          <div>16</div>
-                          <div>17</div>
-                          <div>18</div>
-                          <div>19</div>
-                          <div>20</div>
-                          <div>21</div>
-                        </div>
-
-                        {/* Code */}
-                        <div className=" flex-1 text-gray-100 font-medium overflow-x-auto">
-                          <div className="text-mediumseagreen">// Imports</div>
-                          <div><span className="text-orchid">import</span> <span className="text-lightskyblue">mongoose</span>, &#123; <span className="text-lightskyblue">Schema</span> &#125; <span className="text-orchid">from</span> 'mongoose'</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Collection name</div>
-                          <div><span className="text-orchid">export const</span> <span className="text-lightskyblue">collection</span> = 'Product'|</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Schema</div>
-                          <div><span className="text-orchid">const</span> <span className="text-lightskyblue">schema</span> = <span className="text-orchid">new</span> Schema(&#123;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">name</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String,</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">required</span>: true</div>
-                          <div>&nbsp;&nbsp;&#125;,</div>
-                          <div>&nbsp;</div>
-                          <div>&nbsp;&nbsp;<span className="text-lightskyblue">description</span>: &#123;</div>
-                          <div>&nbsp;&nbsp;&nbsp;&nbsp;<span className="text-lightskyblue">type</span>: String</div>
-                          <div>&nbsp;&nbsp;&#125;</div>
-                          <div>&#125;, &#123;<span className="text-lightskyblue">timestamps</span>: true&#125;)</div>
-                          <div>&nbsp;</div>
-                          <div className="text-mediumseagreen">// Model</div>
-                          <div><span className="text-orchid">export default</span> mongoose.model(<span className="text-lightskyblue">collection</span>, <span className="text-lightskyblue">schema</span>, <span className="text-lightskyblue">collection</span>)</div>
-                        </div>
-                      </div>
-
-                      {/* Footer */}
-                      <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
-                        <span className="font-medium flex-shrink-0">LF</span>
-                        <span className="font-medium flex-shrink-0">Line 5:36</span>
-                        <span className="font-medium flex-shrink-0">UTF8</span>
-                        <span className="font-medium flex-shrink-0">2 spaces</span>
-                        <div className="flex items-center flex-shrink-0 gap-1.5">
-                          <img className="h-3 w-3" alt="" src={git} />
-                          <b className="font-bold">main</b>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
+        {/* Footer */}
+        <div className="bg-gray-300 flex items-center justify-end py-1.5 px-3 gap-3 text-[0.5rem] sm:text-xs text-gray-100 overflow-x-auto border-t border-gray-400">
+          <span className="font-medium flex-shrink-0">LF</span>
+          <span className="font-medium flex-shrink-0">Line 5:36</span>
+          <span className="font-medium flex-shrink-0">UTF8</span>
+          <span className="font-medium flex-shrink-0">2 spaces</span>
+          <div className="flex items-center flex-shrink-0 gap-1.5">
+            <img className="h-3 w-3" alt="" src={git} />
+            <b className="font-bold">main</b>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
             </div>
           </div>
@@ -1394,9 +1294,9 @@ const Home = () => {
             <b className="block text-[2rem] sm:text-[2.5rem] md:text-[3rem] leading-[3rem] text-gray-100 text-center">
               Frequently Asked Questions
             </b>
-            <b className="absolute text-[2rem] sm:text-[2.5rem] md:text-[3rem] leading-[3rem] text-gray-1300 blur-[10px] opacity-50 text-center">
+            {/* <b className="absolute text-[2rem] sm:text-[2.5rem] md:text-[3rem] leading-[3rem] text-gray-1300 blur-[10px] opacity-50 text-center">
               Frequently Asked Questions
-            </b>
+            </b> */}
           </div>
 
           {/* Questions Container */}
@@ -1463,139 +1363,161 @@ const Home = () => {
         {/* //Authentiction */}
 
 
-        <div id='testimonials' className="relative flex flex-col items-center justify-center my-20 px-4 sm:px-6 md:px-10 max-w-6xl mx-auto">
-          {/* Title */}
-          <div className="relative text-center">
-            <b className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] text-gray-100 leading-[2.5rem] md:leading-[3.5rem] tracking-[-0.03em]">
-              Lightning fast
-            </b>
-            <b className="absolute inset-0 text-[2rem] sm:text-[2.5rem] md:text-[3rem] text-gray-1300 leading-[2.5rem] md:leading-[3.5rem] tracking-[-0.03em] filter blur-[10px]">
-              Lightning fast
-            </b>
-          </div>
-          {/* Description */}
-          <p className="mt-6 text-center text-base sm:text-lg md:text-xl text-gray-100 leading-[1.5] max-w-3xl">
-            Node CLI scripts allow developers to automate tasks efficiently. <br /> They manage files, run tests, and configure projects quickly. <br /> Scripts simplify repetitive work for faster development.
-          </p>
+<div 
+  id='testimonials' 
+  className="relative flex flex-col items-center justify-center my-20 px-4 sm:px-6 md:px-10 max-w-6xl mx-auto"
+>
+  {/* Background Image */}
+  <img 
+    src={Earth} 
+    alt="" 
+    className="absolute inset-0 w-full h-[160%] sm:h-[180%] md:h-[200%] object-cover -z-10"
+  />
 
-          {/* Form */}
-          <form className="mt-10 flex flex-col sm:flex-row items-center w-full max-w-2xl gap-0">
-            <input
-              type="email"
-              required
-              placeholder="Your email address"
-              className="flex-1 w-full sm:w-auto h-14 px-5 rounded-t-md sm:rounded-l-md sm:rounded-tr-none border border-green-400 bg-darkslategray-100 text-white placeholder-gray-400 placeholder:text-white focus:outline-none focus:ring-2 focus:ring-green-400"
-            />
-            <button
-              type="submit"
-              className="w-full sm:w-40 h-14 rounded-b-md sm:rounded-r-md sm:rounded-bl-none bg-gradient-to-r from-green-400 to-green-300 text-gray-100 font-medium flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
-            >
-              <span>Subscribe</span>
-              <img src={rights} alt="" className="w-4 h-4" />
-            </button>
-          </form>
-        </div>
+  {/* Title */}
+  <div className="relative text-center">
+    <b className="text-[2rem] sm:text-[2.5rem] md:text-[3rem] text-gray-100 leading-[2.5rem] md:leading-[3.5rem] tracking-[-0.03em]">
+      Lightning fast
+    </b>
+  </div>
 
+  {/* Description */}
+  <p className="mt-6 text-center text-base sm:text-lg md:text-xl text-gray-100 leading-[1.5] max-w-3xl">
+    Node CLI scripts allow developers to automate tasks efficiently. <br /> 
+    They manage files, run tests, and configure projects quickly. <br /> 
+    Scripts simplify repetitive work for faster development.
+  </p>
 
-
-
-
-
-
-        {/* Footer */}
-
-        <div className="w-full bg-gray-200 text-darkgray font-inter py-10 px-6 md:px-16 lg:px-20 mt-40">
-          <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-10">
-
-            {/* Left Section */}
-            <div className="w-full md:w-1/3">
-              <h2 className="text-5xl sm:text-6xl font-bold text-green-500 bg-transparent text-center md:text-left">
-                Node CLI
-              </h2>
-
-              <p className="text-sm mt-4 text-darkgray leading-relaxed text-gray-100">
-                Node CLI commands help automate tasks, manage files, run tests, and configure projects efficiently for developers working across different terminal-based development workflows.
-              </p>
-
-            </div>
-
-            {/* Middle Section */}
-            <div className="grid grid-cols-3 gap-10 text-gray-100">
-              <div>
-                <h3 className="text-lg font-medium mb-4">Product</h3>
-                <ul className="space-y-2 text-darkgray">
-                  <li>Proin.</li>
-                  <li>Mattis.</li>
-                  <li>Nunc.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-medium mb-4">Plan</h3>
-                <ul className="space-y-2 text-darkgray">
-                  <li>Proin.</li>
-                  <li>Mattis.</li>
-                  <li>Nunc.</li>
-                  <li>Mattis.</li>
-                  <li>Nunc.</li>
-                </ul>
-              </div>
-
-              <div>
-                <h3 className="text-lg font-medium mb-4">Services</h3>
-                <ul className="space-y-2 text-darkgray">
-                  <li>Proin.</li>
-                  <li>Mattis.</li>
-                  <li>Nunc.</li>
-                  <li>Mattis.</li>
-                  <li>Nunc.</li>
-                  <li>Mattis.</li>
-                </ul>
-              </div>
-            </div>
-
-            {/* Right Section */}
-            <div className="w-full md:w-[12.5rem] text-gray-100">
-              <b className="block text-lg mb-4">Follow me</b>
-              <div className="flex gap-4">
-                {/* Facebook */}
-                <a href="http://www.facebook.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 h-8 text-blue-600" viewBox="0 0 24 24">
-                    <path d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.406.593 24 1.325 24h11.495v-9.294H9.691V11.07h3.129V8.414c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.919.001c-1.505 0-1.797.716-1.797 1.765v2.316h3.59l-.467 3.637h-3.123V24h6.116C23.406 24 24 23.406 24 22.676V1.325C24 .593 23.406 0 22.675 0z" />
-                  </svg>
-                </a>
-
-                {/* Instagram */}
-                <a href="http://www.instagram.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 h-8 text-pink-500" viewBox="0 0 24 24">
-                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 1.17.056 1.97.246 2.427.415a4.92 4.92 0 011.675 1.09 4.92 4.92 0 011.09 1.675c.169.457.359 1.257.415 2.427.058 1.266.07 1.646.07 4.85s-.012 3.584-.07 4.85c-.056 1.17-.246 1.97-.415 2.427a4.92 4.92 0 01-1.09 1.675 4.92 4.92 0 01-1.675 1.09c-.457.169-1.257.359-2.427.415-1.266.058-1.646.07-4.85.07s-3.584-.012-4.85-.07c-1.17-.056-1.97-.246-2.427-.415a4.92 4.92 0 01-1.675-1.09 4.92 4.92 0 01-1.09-1.675c-.169-.457-.359-1.257-.415-2.427C2.175 15.787 2.163 15.407 2.163 12s.012-3.584.07-4.85c.056-1.17.246-1.97.415-2.427A4.92 4.92 0 013.738 3.048a4.92 4.92 0 011.675-1.09c.457-.169 1.257-.359 2.427-.415C8.416 1.013 8.796 1 12 1s3.584.012 4.85.07zM12 0C8.741 0 8.332.014 7.052.072 5.773.13 4.73.342 3.89.708A6.88 6.88 0 001.635 2.96c-.366.84-.578 1.883-.636 3.162C.942 7.402.928 7.811.928 11.07v1.86c0 3.259.014 3.668.071 4.948.058 1.279.27 2.322.636 3.162a6.88 6.88 0 002.255 2.252c.84.366 1.883.578 3.162.636C8.332 23.986 8.741 24 12 24s3.668-.014 4.948-.071c1.279-.058 2.322-.27 3.162-.636a6.88 6.88 0 002.252-2.255c.366-.84.578-1.883.636-3.162.058-1.28.072-1.689.072-4.948v-1.86c0-3.259-.014-3.668-.072-4.948-.058-1.279-.27-2.322-.636-3.162A6.88 6.88 0 0020.11.708c-.84-.366-1.883-.578-3.162-.636C15.668.014 15.259 0 12 0z" />
-                    <path d="M12 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zm0 10.163a4.001 4.001 0 110-8.002 4.001 4.001 0 010 8.002zM18.406 4.594a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z" />
-                  </svg>
-                </a>
-
-                {/* Twitter/X */}
-                <a href="http://www.twitter.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 h-8 text-sky-500" viewBox="0 0 24 24">
-                    <path d="M23.954 4.569a10 10 0 01-2.825.775 4.932 4.932 0 002.163-2.723 9.86 9.86 0 01-3.127 1.195A4.916 4.916 0 0016.616 3c-2.717 0-4.924 2.206-4.924 4.923 0 .39.045.765.127 1.124C7.728 8.832 4.1 6.864 1.67 3.905a4.822 4.822 0 00-.666 2.475 4.92 4.92 0 002.188 4.1 4.903 4.903 0 01-2.23-.616v.062c0 2.385 1.693 4.374 3.946 4.827a4.935 4.935 0 01-2.224.084 4.926 4.926 0 004.6 3.417A9.867 9.867 0 010 21.543a13.91 13.91 0 007.548 2.212c9.057 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A9.935 9.935 0 0024 4.59z" />
-                  </svg>
-                </a>
-
-                {/* LinkedIn */}
-                <a href="http://www.linkdin.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
-                  <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" className="w-8 h-8 text-blue-700" viewBox="0 0 24 24">
-                    <path d="M20.447 20.452H17.21V14.87c0-1.332-.027-3.047-1.857-3.047-1.858 0-2.143 1.45-2.143 2.948v5.681h-3.236V9h3.104v1.561h.045c.434-.823 1.494-1.688 3.072-1.688 3.285 0 3.89 2.163 3.89 4.977v6.602zM5.337 7.433a1.88 1.88 0 110-3.759 1.88 1.88 0 010 3.759zm1.616 13.019H3.721V9h3.232v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.226.792 24 1.771 24h20.451C23.2 24 24 23.226 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-                  </svg>
-                </a>
-              </div>
-            </div>
+  {/* Form */}
+  <form className="mt-10 flex flex-col sm:flex-row items-center w-full max-w-2xl gap-0">
+    <input
+      type="email"
+      required
+      placeholder="Your email address"
+      className="flex-1 w-full sm:w-auto h-14 px-5 rounded-t-md sm:rounded-l-md sm:rounded-tr-none border border-green-400 bg-darkslategray-100 text-white placeholder-gray-400 placeholder:text-white focus:outline-none focus:ring-2 focus:ring-green-400"
+    />
+    <button
+      type="submit"
+      className="w-full sm:w-40 h-14 rounded-b-md sm:rounded-r-md sm:rounded-bl-none bg-gradient-to-r from-green-400 to-green-300 font-medium flex items-center justify-center gap-2 cursor-pointer hover:opacity-90 transition-opacity"
+    >
+      <span>Subscribe</span>
+      {/* Replaced image with SVG */}
+      <svg xmlns="http://www.w3.org/2000/svg" className="w-4 h-4 text-black" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+      </svg>
+    </button>
+  </form>
+</div>
 
 
-          </div>
 
-          <div className="border-t border-gray-100 mt-10 pt-6 text-center text-sm text-gray-100">
-            © 2025 Nexa | All rights reserved.
-          </div>
-        </div>
+
+
+
+
+
+{/* Footer */}
+<div className="w-full max-w-full overflow-x-hidden bg-gray-200 text-darkgray font-inter py-10 px-4 sm:px-6 md:px-16 lg:px-20 mt-40 relative">
+
+  {/* Glowing Green Line at top */}
+  <div className="w-full h-[0.125rem] bg-green-500 [filter:blur(4px)] rounded-full absolute top-0 left-0"></div>
+
+  <div className="flex flex-col md:flex-row md:justify-between md:items-start gap-6 md:gap-10 relative z-10">
+
+    {/* Left Section */}
+    <div className="w-full md:w-1/3 flex-shrink-0">
+      <img 
+        src={logo} // apna Node JC logo
+        alt="Node JC Logo" 
+        className="w-32 sm:w-40 md:w-32 mx-auto md:mx-0"
+      />
+
+      <p className="text-sm mt-4 text-darkgray leading-relaxed text-gray-100">
+        Node CLI commands help automate tasks, manage files, run tests, and configure projects efficiently for developers working across different terminal-based development workflows.
+      </p>
+    </div>
+
+    {/* Middle Section */}
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 md:gap-10 text-gray-100 underline decoration-slate-400">
+      <div>
+        <h3 className="text-lg font-medium mb-4">Product</h3>
+        <ul className="space-y-2 text-darkgray">
+          <li>Proin.</li>
+          <li>Mattis.</li>
+          <li>Nunc.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-medium mb-4">Plan</h3>
+        <ul className="space-y-2 text-darkgray">
+          <li>Proin.</li>
+          <li>Mattis.</li>
+          <li>Nunc.</li>
+          <li>Mattis.</li>
+          <li>Nunc.</li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 className="text-lg font-medium mb-4">Services</h3>
+        <ul className="space-y-2 text-darkgray">
+          <li>Proin.</li>
+          <li>Mattis.</li>
+          <li>Nunc.</li>
+          <li>Mattis.</li>
+          <li>Nunc.</li>
+          <li>Mattis.</li>
+        </ul>
+      </div>
+    </div>
+
+    {/* Right Section */}
+    <div className="w-full md:w-[12.5rem] flex-shrink-0 text-gray-100">
+      <b className="block text-lg mb-4">Follow me</b>
+      <div className="flex gap-4">
+
+        {/* Facebook */}
+        <a href="https://facebook.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-blue-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M22 12a10 10 0 1 0-11.5 9.87v-7h-2v-3h2v-2.3c0-2 1.2-3.1 3-3.1.9 0 1.8.07 2 .1v2.4h-1.1c-1 0-1.3.6-1.3 1.2V12h2.7l-.4 3h-2.3v7A10 10 0 0 0 22 12z"/>
+          </svg>
+        </a>
+
+        {/* Instagram */}
+        <a href="https://instagram.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-pink-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm10 2c1.7 0 3 1.3 3 3v10c0 1.7-1.3 3-3 3H7c-1.7 0-3-1.3-3-3V7c0-1.7 1.3-3 3-3h10z"/>
+            <path d="M12 7a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8a3 3 0 1 1 0-6 3 3 0 0 1 0 6z"/>
+            <circle cx="17" cy="7" r="1.3"/>
+          </svg>
+        </a>
+
+        {/* Twitter/X */}
+        <a href="https://twitter.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-sky-500" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M15.7 3h3.3l-7.2 8.2L20 21h-6.6l-5-6.5L3.9 21H.6l7.8-8.8L1 3h6.7l4.6 6 3.4-6z"/>
+          </svg>
+        </a>
+
+        {/* YouTube */}
+        <a href="https://youtube.com" target="_blank" className="hover:scale-110 transition-transform duration-200">
+          <svg xmlns="http://www.w3.org/2000/svg" className="w-8 h-8 text-red-600" fill="currentColor" viewBox="0 0 24 24">
+            <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.4 3.5 12 3.5 12 3.5s-7.4 0-9.4.6A3 3 0 0 0 .5 6.2C0 8.2 0 12 0 12s0 3.8.5 5.8a3 3 0 0 0 2.1 2.1c2 .6 9.4.6 9.4.6s7.4 0 9.4-.6a3 3 0 0 0 2.1-2.1c.6-2 .5-5.8.5-5.8s0-3.8-.5-5.8zM9.7 15.5V8.5l6.3 3.5-6.3 3.5z"/>
+          </svg>
+        </a>
+
+      </div>
+    </div>
+
+  </div>
+
+  <div className="border-t border-gray-100 mt-10 pt-6 text-center text-sm text-gray-100">
+    © 2025 Nexa | All rights reserved.
+  </div>
+
+</div>
+
 
 
 
