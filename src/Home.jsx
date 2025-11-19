@@ -27,7 +27,6 @@ import files from './assets/files.svg'
 import wispy from './assets/wispy.svg'
 import greater from './assets/greater.svg'
 import down from './assets/down.svg'
-import rights from './assets/rights.svg'
 import Squares from './Squares';
 import Earth from './assets/Earth.png'
 import logo from './assets/logo.svg'
