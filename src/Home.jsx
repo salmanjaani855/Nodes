@@ -386,7 +386,7 @@ const Home = () => {
                     loop
                     muted
                     playsInline
-                    poster={video}
+                  
                     className="relative z-10 rounded-lg w-full h-full object-cover shadow-lg bg-black/30 border border-green-400/25"
                   />
                 </div>
